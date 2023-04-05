@@ -4,7 +4,7 @@
  * _pow_recursion - will returns the value of x raised to the power of y
  * @x: value of int
  * @y: number of times to multiple
- * Return: value 
+ * Return: value
  */
 
 int _pow_recursion(int x, int y)
