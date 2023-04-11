@@ -6,7 +6,7 @@
 * @ac: argument count.
 * @av: argument vector.
 *
-* Return: pointer to a new string containing all the arguments, or NULL on failure.
+* Return: pointer to string containing all the arguments, or NULL on failure.
 */
 char *argstostr(int ac, char **av)
 {
