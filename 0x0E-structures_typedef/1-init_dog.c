@@ -1,12 +1,12 @@
 #include <stdlib.h>
 #include "dog.h"
+
 /**
-* init_dog - Initializes a dog struct with the given 
-* name, age, and owner.
-* @d: A pointer to the dog struct to initialize.
-* @name: The name to give the dog.
-* @age: The age to give the dog.
-* @owner: The name of the owner to give the dog.
+* init_dog - Initializes a dog structure with the given values.
+* @d: Pointer to the dog structure to initialize.
+* @name: The name of the dog.
+* @age: The age of the dog.
+* @owner: The owner of the dog.
 *
 * Return: None (void).
 */
