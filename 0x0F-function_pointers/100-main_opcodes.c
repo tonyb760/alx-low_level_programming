@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 /**
-* main - Prints the opcodes of its own main function.
+* main - Prints the opcodes of itself.
 * @argc: The number of arguments supplied to the program.
 * @argv: An array of pointers to the arguments.
 *
@@ -10,29 +10,34 @@
 */
 int main(int argc, char *argv[])
 {
-int num_bytes;
-unsigned char *main_opcodes;
-int i;
+int bytes, index;
+int (*address)(int, char **) = main;
+unsigned char opcode;
 
-if (argc != 2) {
+if (argc != 2)
+{
 printf("Error\n");
 exit(1);
 }
 
-num_bytes = atoi(argv[1]);
+bytes = atoi(argv[1]);
 
-if (num_bytes < 0) {
+if (bytes < 0)
+{
 printf("Error\n");
 exit(2);
 }
 
-main_opcodes = (unsigned char *)main;
+for (index = 0; index < bytes; index++)
+{
+opcode = *(unsigned char *)address;
+printf("%.2x", opcode);
 
-for (i = 0; i < num_bytes; i++) {
-printf("%02x", *(main_opcodes + i));
-if (i < num_bytes - 1) {
+if (index == bytes - 1)
+continue;
+
 printf(" ");
-}
+address++;
 }
 
 printf("\n");
